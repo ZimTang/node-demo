@@ -10,6 +10,7 @@ const writer = fs.createWriteStream("./foo.txt", { flags: "a", start: 4 });
 
 writer.write("你好啊", (err) => {
   console.log(err);
+  console.log(err);
 });
 
 writer.write("李银河", (err) => {
@@ -19,7 +20,7 @@ writer.write("李银河", (err) => {
 // 内部做了两件事
 // writer.write("hello world")
 // close()
-writer.end('hello world')
+writer.end("hello world");
 
 writer.on("close", () => {
   console.log("文件被关闭");
